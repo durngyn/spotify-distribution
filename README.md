@@ -1,6 +1,6 @@
 # Spotify Distribution Project (Start Date 01/21/2023)
 
-## **View what the website currently looks like here! https://bchh325.github.io/spotify-distritbution/**
+## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
 
 The goal is the application is to create an application where users can sign in to spotify, select <br>
 a given playlist in from their profile, and provide a visualized distribution in which they can see the <br>
