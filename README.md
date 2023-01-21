@@ -4,8 +4,7 @@
 
 The goal is the application is to create an application where users can sign in to spotify, select <br>
 a given playlist in from their profile, and provide a visualized distribution in which they can see the <br>
-make up of that particular playlist by genre. The goal is subject to change based on the limitations of Spotify
-'s API.
+make up of that particular playlist by genre. The goal is subject to change based on the limitations of Spotify's API.
 
 ## Technologies Used
 * TBD
