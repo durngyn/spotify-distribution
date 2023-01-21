@@ -7,7 +7,7 @@ a given playlist in from their profile, and provide a visualized distribution in
 make up of that particular playlist by genre. The goal is subject to change based on the limitations of Spotify's API.
 
 ## Technologies Used
-* TBD
+* TBD (Most services from AWS that I have not used yet + ones I have experience in)
 
 ## Completed Tasks
 * N/A
