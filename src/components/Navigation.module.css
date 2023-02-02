@@ -7,7 +7,7 @@
     grid-template-rows: min-content;
 }
 
-.navLeft {
+.nav-left {
     pointer-events: none;
     padding-left: 20px;
     display: flex;
@@ -16,7 +16,7 @@
     font-size: 2rem;
 }
 
-.navRight {
+.nav-right {
     align-items: center;
     padding-right: 20px;
     display: flex;
@@ -26,6 +26,8 @@
 }
 
 .button {
+    text-decoration: none;
+    color: black;
     font-size: 1.1rem;
     height: max-content;
     border-bottom: 2px solid whitesmoke;
@@ -42,10 +44,17 @@
 }
 
 .name {
+    pointer-events: auto;
     font-weight: bolder;
     font-size: 2.2rem;
     color: #00B8E8;
     text-shadow: 1.5px 1.5px black;
+    transition: color 0.075s ease-out;
+}
+
+.name:hover {
+    cursor: default;
+    color: #66EDAB;
 }
 
 @keyframes nav-color {
