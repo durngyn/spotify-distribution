@@ -1,5 +1,5 @@
 .content {
-    background-color: #333333;
+    background-color: #C6F8FF;
     flex: 3 4 75%;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,8 @@
 }
 
 .content-item {
-    background-color: grey;
+    color: #00B8E8;
+    background-color: #C6F8FF;
     margin: 5px 15px;
     font-size: 40px;
     text-align: center;

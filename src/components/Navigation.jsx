@@ -4,11 +4,16 @@ import styles from './Navigation.module.css'
 export default function Navigation() {
   return (
     <div className={styles.nav}>
-        <button className={styles.button}>Nav</button>
-        <button className={styles.button}>Nav</button>
-        <button className={styles.button}>Nav</button>
-        <button className={styles.button}>Nav</button>
-        <button className={styles.button}>Nav</button>
+      <div className={styles.navLeft}>
+        <span>Genres <span className={styles.name}>Graphify</span>'d!</span>
+      </div>
+      <div className={styles.navRight}>
+        <span className={styles.button}>Navigation</span>
+        <span className={styles.button}>Navigation</span>
+        <span className={styles.button}>Navigation</span>
+        <span className={styles.button}>Navigation</span>
+        <span className={styles.button}>Navigation</span>
+      </div>
     </div>
   )
 }
