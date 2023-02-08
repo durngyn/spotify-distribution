@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import CallbackPage from './components/CallbackPage';
 import GraphPage from './components/GraphPage';
 import Navigation from './components/Navigation';
 import NullPage from './components/NullPage';
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/graphify" element={<GraphPage />} />
           <Route path="/privacy-policy" element={<PrivacyPage />} />
-          <Route path="/*" element={<GraphPage />} />
+          <Route path="/callback" element={<CallbackPage />} />
+          <Route path="/*" element={<NullPage />} />
         </Routes>
       </div>
     </div>
