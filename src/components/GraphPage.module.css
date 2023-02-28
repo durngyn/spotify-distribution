@@ -1,0 +1,100 @@
+.page-container {
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.playlist-container {
+    border: 1px solid white;
+    overflow: scroll;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100%;
+    background-color: green;
+    box-sizing: inherit;
+}
+
+.playlist-container span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 30px;
+    padding: 0px 10px;
+    display: block;
+    box-sizing: border-box;
+    margin: 5px 0px;
+}
+
+.graph-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: inherit;
+    border: 1px solid red;
+    font-size: 1.5rem;
+}
+
+.graph {
+    width: 100%;
+    margin: 0px 10px;
+    display: grid;
+    grid-template-columns: min-content 8fr;
+}
+
+.graph span {
+    margin: 10px 0px;
+}
+
+.graph div {
+    margin: 10px 0px;
+}
+
+.genres {
+    padding: 0px 10px;
+    border-right: 3px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.bars {
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bars div {
+    text-align: right;
+    overflow: hidden;
+    color: white;
+    background-color: green;
+    animation-name: animateBar;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.short {
+    animation-duration: 1s;
+    width: 25%;
+}
+
+.medium {
+    animation-duration: 2s;
+    width: 50%;
+}
+
+.long {
+    animation-duration: 3s;
+    width: 75%;
+}
+
+@keyframes animateBar {
+    from {
+      transform: translateX(-100%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
