@@ -3,6 +3,6 @@ import styles from './NullPage.module.css'
 
 export default function NullPage() {
   return (
-    <div>NullPage</div>
+    <div>NullPage Testing</div>
   )
 }
