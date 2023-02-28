@@ -2,14 +2,35 @@ import React from 'react'
 import styles from './GraphPage.module.css'
 
 export default function GraphPage() {
+    const x = ["A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D"]
+
+    for (var i; i < 50; i++) {
+        x.push("")
+    }
+
+    console.log(x)
     return (
-        <div>
-            <div className={styles.content}>
-                <div className={styles["content-item"]}>Content</div>
-                <div className={styles["content-item"]}>Content</div>
-                <div className={styles["content-item"]}>Content</div>
-                <div className={styles["content-item"]}>Content</div>
-                <div className={styles["content-item"]}><a href="http://localhost:8888/login">LOGIN</a></div>
+        <div className={styles["page-container"]}>
+            <div className={styles["playlist-container"]}>
+                {x.map((item) => {
+                    return <span className={styles.playlist}>{item + " playlist item"}</span>
+                })}
+            </div>
+            <div className={styles["graph-container"]}>
+                <div className={styles.graph}>
+                    <div className={styles.genres}>
+                        <span>Genre</span>
+                        <span>Genre</span>
+                        <span>Genre</span>
+                        <span>Genre</span>
+                    </div>
+                    <div className={styles.bars}>
+                        <div className={styles.short}>25%</div>
+                        <div className={styles.medium}>50%</div>
+                        <div className={styles.long}>Not currently using actual data</div>
+                        <div className={styles.short}>25%</div>
+                    </div>
+                </div>
             </div>
         </div>
     )

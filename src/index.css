@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
@@ -14,4 +15,5 @@ code {
 }
 
 ::-webkit-scrollbar { width: 0 !important }
+::-webkit-scrollbar { height: 0 !important }
 

@@ -1,0 +1,123 @@
+.page-container {
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+
+.playlist-container {
+    overflow: scroll;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100%;
+    box-sizing: inherit;
+    background-color: rgb(24, 24, 24);
+}
+
+.playlist {
+    line-height: 30px;
+    display: block;
+    color: rgb(202, 202, 202);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 30px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    -webkit-transition: transform 0.2s cubic-bezier(0.5, 0.25, 0, 1);
+    -moz-transition: transform 0.2s cubic-bezier(0.5, 0.25, 0, 1);
+    -o-transition: transform 0.2s cubic-bezier(0.5, 0.25, 0, 1);
+    transition: transform 0.2s cubic-bezier(0.5, 0.25, 0, 1);
+}
+
+.playlist:hover {
+    color: white;
+    cursor: pointer;
+    transform: translateX(8px);
+    border-left: 2px solid white;
+}
+
+.graph-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: inherit;
+    font-size: 1.5rem;
+}
+
+.graph {
+    width: 100%;
+    margin: 0px 10px;
+    display: grid;
+    grid-template-columns: min-content 8fr;
+}
+
+.graph span {
+    margin: 10px 0px;
+}
+
+.graph div {
+    margin: 10px 0px;
+}
+
+.genres {
+    padding: 0px 10px;
+    border-right: 3px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.bars {
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bars div {
+    text-align: right;
+    overflow: hidden;
+    color: black;
+    background-color: whitesmoke;
+    animation-name: animateBar;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.short {
+    animation-duration: 1s;
+    width: 25%;
+}
+
+.medium {
+    animation-duration: 1.5s;
+    width: 50%;
+}
+
+.long {
+    animation-duration: 2.5s;
+    width: 75%;
+}
+
+@keyframes animateBar {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .page-container {
+        grid-template-columns: 1fr 6fr;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .page-container {
+        grid-template-columns: 1fr 4fr;
+    }
+}

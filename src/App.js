@@ -13,9 +13,9 @@ function App() {
       <Navigation />
       <div className="content-container">
         <Routes>
-          <Route path="/graphify" element={<GraphPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPage />} />
-          <Route path="/callback" element={<CallbackPage />} />
+          <Route path="/" element={<GraphPage />} />
+          <Route path="spotify-distribution/privacy-policy" element={<PrivacyPage />} />
+          <Route path="spotify-distribution/callback" element={<CallbackPage />} />
           <Route path="/*" element={<NullPage />} />
           <Route path="/login" element={<Login />} />
         </Routes>
