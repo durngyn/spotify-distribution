@@ -17,7 +17,6 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/callback" element={<CallbackPage />} />
           <Route path="/*" element={<NullPage />} />
-          <Route path="/test" element={<Test />} />
         </Routes>
       </div>
     </div>
