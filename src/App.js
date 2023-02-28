@@ -5,6 +5,7 @@ import GraphPage from './components/GraphPage';
 import Navigation from './components/Navigation';
 import NullPage from './components/NullPage';
 import PrivacyPage from './components/PrivacyPage';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="spotify-distribution/privacy-policy" element={<PrivacyPage />} />
           <Route path="spotify-distribution/callback" element={<CallbackPage />} />
           <Route path="/*" element={<NullPage />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
