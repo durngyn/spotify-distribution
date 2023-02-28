@@ -2,7 +2,7 @@
     box-sizing: border-box;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 8fr;
 }
 
 .playlist-container {
@@ -107,5 +107,17 @@
 
     to {
         transform: translateX(0%);
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .page-container {
+        grid-template-columns: 1fr 6fr;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .page-container {
+        grid-template-columns: 1fr 4fr;
     }
 }
