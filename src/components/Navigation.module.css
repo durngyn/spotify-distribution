@@ -51,6 +51,7 @@
     color: #9c5cff;
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
+    padding: 0px 50px;
 }
 
 .name:hover {

@@ -10,6 +10,9 @@ export default function Navigation() {
       </div>
       <div className={styles["nav-right"]}>
         <NavLink className={styles.button} to="/graphify">
+          <span className={styles.button}>Login</span>
+        </NavLink>
+        <NavLink className={styles.button} to="/graphify">
           <span className={styles.button}>Graph!</span>
         </NavLink>
         <NavLink className={styles.button} to="/privacy-policy">
