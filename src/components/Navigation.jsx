@@ -6,10 +6,10 @@ export default function Navigation() {
   return (
     <div className={styles.nav}>
       <div className={styles["nav-left"]}>
-        <span> <span className={styles.name}>Graphify</span></span>
+        <span className={styles.name}>Graphify</span>
       </div>
       <div className={styles["nav-right"]}>
-      <NavLink className={styles.button} to="/login">
+        <NavLink className={styles.button} to="/login">
           <span className={styles.button}>Login</span>
         </NavLink>
         <NavLink className={styles.button} to="/">

@@ -9,7 +9,6 @@
 
 .nav-left {
     pointer-events: none;
-    padding-left: 20px;
     display: flex;
     height: 100%;
     justify-content: flex-start;
@@ -29,9 +28,9 @@
 .button {
     text-decoration: none;
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     height: fit-content;
-    border-bottom: 2px solid rgb(142, 111, 216);
+    border-bottom: 2px solid #9c5cff;
     animation: nav-color-default 0.2s;
     animation-fill-mode: forwards;
     transition: transform 0.1s ease-in;
@@ -49,10 +48,10 @@
     pointer-events: auto;
     font-weight: bolder;
     font-size: 2.2rem;
-    color: rgb(185, 59, 243);
+    color: #9c5cff;
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
-    padding: 0px 50px;
+    padding-left: 20px;
 }
 
 .name:hover {
@@ -66,7 +65,7 @@
     }
 
     to {
-        border-color: rgb(142, 111, 216);
+        border-color: #9c5cff;
     }
 }
 
@@ -77,5 +76,11 @@
 
     to {
         border-color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .nav {
+        grid-template-columns: 1fr 2fr;
     }
 }

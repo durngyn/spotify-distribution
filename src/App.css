@@ -7,6 +7,6 @@
 }
 
 .content-container {
-  background-color: #ffffff;
+  background-color: rgb(75, 75, 75);
   height: calc(100vh - 80px);
 }

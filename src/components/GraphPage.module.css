@@ -35,7 +35,8 @@
     color: white;
     cursor: pointer;
     transform: translateX(8px);
-    border-left: 2px solid white;
+    border-left: 2px solid #9c5cff;
+    color: #9c5cff;
 }
 
 .graph-container {
@@ -63,9 +64,10 @@
 
 .genres {
     padding: 0px 10px;
-    border-right: 3px solid black;
+    border-right: 3px solid whitesmoke;
     display: flex;
     flex-direction: column;
+    color: whitesmoke;
 }
 
 .bars {
@@ -78,8 +80,8 @@
 .bars div {
     text-align: right;
     overflow: hidden;
-    color: black;
-    background-color: whitesmoke;
+    color: whitesmoke;
+    background-color: #9c5cff;
     animation-name: animateBar;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
