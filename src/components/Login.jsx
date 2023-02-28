@@ -3,8 +3,12 @@ import styles from './Login.module.css'
 
 export default function Login() {
   return (
-    <body>
-        <h1 className={styles.header}>Login</h1>
-    </body>
+    <div className={styles.container}>
+            <h1 className={styles.header}>
+                <span>Graphify wants to login to Spotify</span>
+                {/* <span className={styles.shadow}>Login</span>   */}
+                <button>Login</button>
+            </h1>
+    </div>
   )
 }
