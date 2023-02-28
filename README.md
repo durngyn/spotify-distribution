@@ -2,7 +2,7 @@
 
 ## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
 
-The end goal is for users to be able to view a visualization of their genres in a given spotify playlist <br>
+The end goal is for users to be able to view a data visualization of their genres in a given spotify playlist <br>
 and interact with others who are also using the site at the same time.
 
 ## Technologies I'm planning to use
