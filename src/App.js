@@ -5,6 +5,7 @@ import GraphPage from './components/GraphPage';
 import Navigation from './components/Navigation';
 import NullPage from './components/NullPage';
 import PrivacyPage from './components/PrivacyPage';
+import Test from './components/Test';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/callback" element={<CallbackPage />} />
           <Route path="/*" element={<NullPage />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </div>
     </div>
