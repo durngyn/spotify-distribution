@@ -9,7 +9,7 @@ export default function GraphPage() {
                 <div className={styles["content-item"]}>Content</div>
                 <div className={styles["content-item"]}>Content</div>
                 <div className={styles["content-item"]}>Content</div>
-                <div className={styles["content-item"]}>Content</div>
+                <div className={styles["content-item"]}><a href="http://localhost:8888/login">LOGIN</a></div>
             </div>
         </div>
     )
