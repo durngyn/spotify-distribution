@@ -13,7 +13,7 @@ export default function GraphPage() {
         <div className={styles["page-container"]}>
             <div className={styles["playlist-container"]}>
                 {x.map((item) => {
-                    return <span className={styles.playlist}>{item + " lorem lorem lorem lorem"}</span>
+                    return <span className={styles.playlist}>{item + " playlist item"}</span>
                 })}
             </div>
             <div className={styles["graph-container"]}>
