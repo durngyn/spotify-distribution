@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './GraphPage.module.css'
+import CountUp from 'react-countup';import styles from './GraphPage.module.css'
 
 export default function GraphPage() {
     const x = ["A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D"]
@@ -25,10 +25,10 @@ export default function GraphPage() {
                         <span>Genre</span>
                     </div>
                     <div className={styles.bars}>
-                        <div className={styles.short}>25%</div>
-                        <div className={styles.medium}>50%</div>
+                        <div className={styles.short}><CountUp duration={1} end={25} />%</div>
+                        <div className={styles.medium}><CountUp duration={1.5} end={50} />%</div>
                         <div className={styles.long}>Not currently using actual data</div>
-                        <div className={styles.short}>25%</div>
+                        <div className={styles.short}><CountUp duration={1} end={25} />%</div>
                     </div>
                 </div>
             </div>
