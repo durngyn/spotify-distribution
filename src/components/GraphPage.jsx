@@ -13,7 +13,7 @@ export default function GraphPage() {
         <div className={styles["page-container"]}>
             <div className={styles["playlist-container"]}>
                 {x.map((item) => {
-                    return <span>{item + " lorem lorem lorem lorem"}</span>
+                    return <span className={styles.playlist}>{item + " lorem lorem lorem lorem"}</span>
                 })}
             </div>
             <div className={styles["graph-container"]}>
@@ -27,7 +27,7 @@ export default function GraphPage() {
                     <div className={styles.bars}>
                         <div className={styles.short}>25%</div>
                         <div className={styles.medium}>50%</div>
-                        <div className={styles.long}>75%</div>
+                        <div className={styles.long}>Not currently using actual data</div>
                         <div className={styles.short}>25%</div>
                     </div>
                 </div>
