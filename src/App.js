@@ -5,7 +5,6 @@ import GraphPage from './components/GraphPage';
 import Navigation from './components/Navigation';
 import NullPage from './components/NullPage';
 import PrivacyPage from './components/PrivacyPage';
-import Test from './components/Test';
 
 function App() {
   return (
