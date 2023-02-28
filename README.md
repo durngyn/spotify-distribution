@@ -2,15 +2,20 @@
 
 ## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
 
-The goal is the application is to create an application where users can sign in to spotify, select <br>
-a given playlist in from their profile, and provide a visualized distribution in which they can see the <br>
-make up of that particular playlist by genre.
+The end goal is for users to be able to view a visualization of their genres in a given spotify playlist <br>
+and interact with others who are also using the site at the same time.
 
-## Technologies Used
-* TBD (Most likely services from AWS that I have not used yet + ones I have experience in)
+## Technologies I'm planning to use
+* React
+* Express/Node (BFF Proxy / Auth Code Flow w/ PKCE)
+* Spotify Web API
+* Spotify Web Playback SDK
+* WebSockets
+* Database TBD
+* Deployment Options TBD
 
 ## Completed Tasks
-* N/A
+* Sample UI Design
 
 ## Planned Tasks (I always find something to add to this list)
-* N/A
+* BFF Proxy for User Authentication
