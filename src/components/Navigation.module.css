@@ -46,6 +46,10 @@
     animation-iteration-count: infinite;
 }
 
+.icon {
+    margin-left: 70px;
+}
+
 .name {
     letter-spacing: 3px;
     pointer-events: auto;
@@ -57,22 +61,25 @@
     animation-iteration-count: infinite;
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
-    padding-left: 20px;
-    margin-left: 100px;
+    padding-left: 0px;
+    margin-left: 20px;
+    user-select: none;
+    text-decoration: none;
 }
 
 .name:hover {
     cursor: default;
+    animation-duration: 0s;
     color: #ffcb5c;
+}
+
+.name:active {
+    color: #d3a94d;
 }
 
 @keyframes example {
     0% {
         color: #9c5cff;
-    }
-
-    25% {
-        color: rgb(255, 187, 42);
     }
 
     50% {
