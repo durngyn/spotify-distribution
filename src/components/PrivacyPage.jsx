@@ -3,6 +3,6 @@ import styles from './PrivacyPage.module.css'
 
 export default function PrivacyPage() {
   return (
-    <div>PrivacyPage</div>
+    <div className={styles.privacyContainer}>PrivacyPage</div>
   )
 }

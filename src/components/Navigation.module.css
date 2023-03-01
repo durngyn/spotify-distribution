@@ -41,6 +41,13 @@
     cursor: pointer;
     animation: nav-color 0.2s;
     animation-fill-mode: forwards;
+    animation-name: example2;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.icon {
+    margin-left: 70px;
 }
 
 .name {
@@ -48,23 +55,64 @@
     pointer-events: auto;
     font-weight: bolder;
     font-size: 2.2rem;
-    color: #9c5cff;
+    /* color: #9c5cff; */
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
-    padding-left: 20px;
+    padding-left: 0px;
+    margin-left: 20px;
+    user-select: none;
+    text-decoration: none;
 }
 
 .name:hover {
     cursor: default;
+    animation-duration: 0s;
     color: #ffcb5c;
 }
 
-@keyframes nav-color {
-    from {
-        border-color: #ffffff;
+.name:active {
+    color: #d3a94d;
+}
+
+@keyframes example {
+    0% {
+        color: #9c5cff;
     }
 
-    to {
+    50% {
+        color: #9c5cff;
+    }
+
+    75% {
+        color: rgb(247, 0, 255);
+    }
+
+    100% {
+        color: #9c5cff;
+    }
+}
+
+@keyframes example2 {
+    0% {
+        border-color: #9c5cff;
+    }
+
+    25% {
+        border-color: rgb(247, 0, 255);
+    }
+
+    50% {
+        border-color: #9c5cff;
+    }
+
+    75% {
+        border-color: rgb(247, 0, 255);
+    }
+
+    100% {
         border-color: #9c5cff;
     }
 }

@@ -81,7 +81,7 @@
     text-align: right;
     overflow: hidden;
     color: whitesmoke;
-    background-color: #9c5cff;
+    background: linear-gradient(to right, #9c5cff, #da0faacc);
     animation-name: animateBar;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;

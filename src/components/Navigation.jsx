@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from './Navigation.module.css'
 import { NavLink } from 'react-router-dom'
+import gr from '../images/gr.png'
 
 export default function Navigation() {
   return (
     <div className={styles.nav}>
       <div className={styles["nav-left"]}>
+      <img className={styles.icon} src={gr}/>
+      <NavLink className={styles.name} to="/login">
         <span className={styles.name}>Graphify</span>
+      </NavLink>
       </div>
       <div className={styles["nav-right"]}>
         <NavLink className={styles.button} to="/login">
