@@ -10,7 +10,7 @@ and interact with others who are also using the site at the same time.
 * Express/Node (BFF Proxy / Auth Code Flow w/ PKCE)
 * Spotify Web API
 * Spotify Web Playback SDK
-* WebSockets
+* WebSockets (Socket.io?)
 * Database TBD
 * Deployment Options TBD
 
