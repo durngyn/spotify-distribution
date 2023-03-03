@@ -7,10 +7,10 @@ export default function Navigation() {
   return (
     <div className={styles.nav}>
       <div className={styles["nav-left"]}>
-      <img className={styles.icon} src={gr}/>
-      <NavLink className={styles.name} to="/login">
-        <span className={styles.name}>Graphify</span>
-      </NavLink>
+        <img className={styles.icon} src={gr} />
+        <NavLink className={styles.name} to="/login">
+          <span className={styles.name}>Graphify</span>
+        </NavLink>
       </div>
       <div className={styles["nav-right"]}>
         <NavLink className={styles.button} to="/login">
