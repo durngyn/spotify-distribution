@@ -1,6 +1,7 @@
 .App {
   /* background-color: green; */
   background: linear-gradient(to bottom right, #270d21cc, #9c5cff), url(https://i0.wp.com/www.additudemag.com/wp-content/uploads/2020/06/GettyImages-1201128952-e1591819070655.jpg);
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   display: grid;
