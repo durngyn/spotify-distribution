@@ -18,6 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     font-size: 2rem;
+    /* margin-left: 350px; */
 }
 
 .nav-right {
@@ -34,9 +35,10 @@
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
     height: fit-content;
-    animation: nav-color-default 0.2s;
-    animation-fill-mode: forwards;
+    /* animation: nav-color-default 0.2s;
+    animation-fill-mode: forwards; */
     transition: transform 0.1s ease-in;
+
 }
 
 .button:hover {
@@ -44,15 +46,15 @@
     cursor: pointer;
     animation: nav-color 0.2s;
     animation-fill-mode: forwards;
-    animation-name: example2;
+    /* animation-name: example2;
     animation-duration: 6s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
     border-bottom: 2px solid #9c5cff;
 }
 
 .icon {
     margin-left: 20px;
-    width: 45px;
+    /* width: 45px; */
 }
 
 .name {
@@ -68,22 +70,25 @@
     /* background: -webkit-linear-gradient(#9c5cff, #da0faacc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-    /* text-shadow: 1.5px 1.5px black; */
+    text-shadow: 4.5px 4.5px 7px black;
     transition: color 0.1s ease-out;
     padding-left: 0px;
     margin-left: 10px;
     user-select: none;
     text-decoration: none;
-    transition: all 2s ease-out;
+    transition: all .2s ease-out;
 }
 
 .name:hover {
     animation: none !important;
     cursor: pointer;
+    color: #9c5cff;
+    text-shadow: 4.5px 4.5px 40px #6919e093;
 }
 
 .name:active {
-    color: #d3a94d;
+    color: #46227c;
+    text-shadow: 4.5px 4.5px 40px #46227c;
 }
 
 @keyframes example {
