@@ -1,5 +1,5 @@
 .nav {
-    background: #ffffff;
+    /* background: #ffffff; */
     display: grid;
     height: fit-content;
     padding: 0px 0px;
@@ -27,10 +27,9 @@
 
 .button {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     height: fit-content;
-    border-bottom: 2px solid #9c5cff;
     animation: nav-color-default 0.2s;
     animation-fill-mode: forwards;
     transition: transform 0.1s ease-in;
@@ -44,6 +43,7 @@
     animation-name: example2;
     animation-duration: 6s;
     animation-iteration-count: infinite;
+    border-bottom: 2px solid #9c5cff;
 }
 
 .icon {
@@ -59,6 +59,9 @@
     animation-name: example;
     animation-duration: 6s;
     animation-iteration-count: infinite;
+    /* background: -webkit-linear-gradient(#9c5cff, #da0faacc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
     padding-left: 0px;
