@@ -5,7 +5,8 @@
     align-items: center;
     padding: 30px;
     box-sizing: border-box;
-    /* background-color: rgb(142, 111, 216); */
+    user-select: none
+        /* background-color: rgb(142, 111, 216); */
 
     ;
     /* background: radial-gradient(circle, #9c5cff, #270d21cc), url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2019_09/2769481/190228-headphones-music-se-152p.jpg); */
@@ -66,7 +67,7 @@
 }
 
 .logo {
-    width: 70px;
+    width: 52px;
     text-align: center;
     margin-left: 25px;
 }
@@ -76,11 +77,9 @@ button {
     color: #1DB954;
     background: black;
     /* background: linear-gradient(to bottom left, #8b4fe4, #b60c8ecc); */
-    font-size: 35px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 3px 5px;
     border: solid 3px#1DB954;
     border-radius: 70px;
     /* border: none; */
@@ -98,21 +97,15 @@ button:hover {
     cursor: pointer;
 }
 
-button:hover .word {}
-
 button:active {
     /* background: linear-gradient(to bottom left, #7644c2, #960c75cc); */
     background: black;
     transform: scale(1);
 }
 
-button:active .word {}
-
-button:active .logo {}
-
 .word {
     padding: 0px 30px;
     /* margin: 10px; */
-    font-size: 30px;
+    font-size: 26px;
     justify-content: center;
 }

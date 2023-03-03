@@ -5,8 +5,10 @@
     padding: 0px 0px;
     grid-template-columns: 1fr 1fr;
     height: 80px;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid rgba(115, 85, 129, 0.164);
     box-sizing: border-box;
+    box-shadow: 5px 10px 8px #0000002c;
+    user-select: none;
 }
 
 .nav-left {
@@ -50,6 +52,7 @@
 
 .icon {
     margin-left: 20px;
+    width: 45px;
 }
 
 .name {
@@ -58,13 +61,14 @@
     font-weight: bolder;
     font-size: 2.2rem;
     /* color: #9c5cff; */
-    animation-name: example;
+    color: #ffffff;
+    /* animation-name: example;
     animation-duration: 6s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
     /* background: -webkit-linear-gradient(#9c5cff, #da0faacc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-    text-shadow: 1.5px 1.5px black;
+    /* text-shadow: 1.5px 1.5px black; */
     transition: color 0.1s ease-out;
     padding-left: 0px;
     margin-left: 10px;
