@@ -6,7 +6,9 @@
     padding: 30px;
     box-sizing: border-box;
     /* background-color: rgb(142, 111, 216); */
-    background: linear-gradient(to top, #270d21cc, #9c5cff), url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2019_09/2769481/190228-headphones-music-se-152p.jpg);
+
+    ;
+    /* background: radial-gradient(circle, #9c5cff, #270d21cc), url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2019_09/2769481/190228-headphones-music-se-152p.jpg); */
 
     background-repeat: no-repeat;
     background-size: 100%;
@@ -39,7 +41,7 @@
 }
 
 .pic {
-    width: 80px;
+    width: 90px;
     margin-right: 30px;
 }
 
@@ -48,7 +50,7 @@
 }
 
 .pic3 {
-    color: rgb(39, 212, 62);
+    color: aliceblue;
     margin-left: 30px;
 }
 
@@ -69,33 +71,44 @@
     margin-left: 25px;
 }
 
-.spot {
-    color: rgb(68, 231, 68)
-}
-
 button {
     display: flex;
-    color: aliceblue;
-    border: solid 4px;
-    background: transparent;
+    color: #1DB954;
+    background: black;
+    /* background: linear-gradient(to bottom left, #8b4fe4, #b60c8ecc); */
     font-size: 35px;
-    border-radius: 70px;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 3px 5px;
+    border: solid 3px#1DB954;
+    border-radius: 70px;
+    /* border: none; */
 
+    transition: all 0.1s ease-out;
 }
 
 button:hover {
-    background: linear-gradient(to right, #da0faacc, #9c5cff);
+    /* background: radial-gradient(circle, #9c5cff, #da0faacc); */
+    /* background: linear-gradient(to bottom left, #9359e9, #bb1895cc); */
     /* background-color: #b45add; */
-    border-color: #9a3dd8cc;
+    background: black;
+    /* border-color: #9a3dd8cc; */
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
+button:hover .word {}
+
 button:active {
-    color: rgb(152, 50, 199);
-    background: rgb(235, 232, 217);
+    /* background: linear-gradient(to bottom left, #7644c2, #960c75cc); */
+    background: black;
+    transform: scale(1);
 }
+
+button:active .word {}
+
+button:active .logo {}
 
 .word {
     padding: 0px 30px;

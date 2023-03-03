@@ -2,14 +2,19 @@ import React from 'react'
 import styles from './Login.module.css'
 import { FaSpotify } from "react-icons/fa";
 import { HiArrowsUpDown } from "react-icons/hi2";
-import gr from '../images/gr.png'
+import { BsArrowLeftRight } from "react-icons/bs";
+import { CgArrowsExchange } from "react-icons/cg";
+// import gr from '../images/gr.png'
+import gr from '../images/grwhite.png'
+// import gr from '../images/groutline.png'
+// import gr from '../images/grb.png'
 
 export default function Login() {
   return (
     <div className={styles.container}>
                 <div className={styles.login}>
                   <img className={styles.pic} src={gr}/>
-                  <HiArrowsUpDown className={styles.pic2}size={80} />
+                  <CgArrowsExchange className={styles.pic2}size={90} />
                   <FaSpotify className={styles.pic3}size={90} />
                 </div>  
                 <h1 className={styles.header}>
