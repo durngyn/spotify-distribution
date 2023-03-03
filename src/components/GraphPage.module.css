@@ -78,6 +78,7 @@
 }
 
 .bars div {
+    opacity: 0.7;
     text-align: right;
     overflow: hidden;
     color: whitesmoke;
@@ -85,10 +86,15 @@
     animation-name: animateBar;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
+    transition: opacity 0.15s cubic-bezier(.29,-0.12,.51,.91);
 }
 
 .bars div:hover {
-    background: green;
+    opacity: 1;
+}
+
+.bars div:hover ~ #background-img {
+    background-size: 110vmax;
 }
 
 .short {
