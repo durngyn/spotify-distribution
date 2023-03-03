@@ -5,6 +5,8 @@
     padding: 0px 0px;
     grid-template-columns: 1fr 1fr;
     height: 80px;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
 }
 
 .nav-left {
