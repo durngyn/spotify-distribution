@@ -87,6 +87,10 @@
     animation-fill-mode: forwards;
 }
 
+.bars div:hover {
+    background: green;
+}
+
 .short {
     animation-duration: 1s;
     width: 25%;
