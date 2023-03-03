@@ -1,6 +1,7 @@
 # Spotify Distribution Project (Start Date 01/21/2023)
 
 ## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
+### **Backend repo: https://github.com/bchh325/graphify-server**
 
 The end goal is for users to be able to view a data visualization of their genres in a given spotify playlist <br>
 and interact with others who are also using the site at the same time.
@@ -11,7 +12,7 @@ and interact with others who are also using the site at the same time.
 * Spotify Web API
 * Spotify Web Playback SDK
 * WebSockets (Socket.io?)
-* Database TBD
+* MongoDB
 * Deployment Options TBD
 
 ## Completed Tasks
