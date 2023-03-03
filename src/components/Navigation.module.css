@@ -47,7 +47,7 @@
 }
 
 .icon {
-    margin-left: 70px;
+    margin-left: 20px;
 }
 
 .name {
@@ -62,15 +62,15 @@
     text-shadow: 1.5px 1.5px black;
     transition: color 0.1s ease-out;
     padding-left: 0px;
-    margin-left: 20px;
+    margin-left: 10px;
     user-select: none;
     text-decoration: none;
+    transition: all 2s ease-out;
 }
 
 .name:hover {
-    cursor: default;
-    animation-duration: 0s;
-    color: #ffcb5c;
+    animation: none !important;
+    cursor: pointer;
 }
 
 .name:active {
