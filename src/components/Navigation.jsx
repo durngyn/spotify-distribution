@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Navigation.module.css'
 import { NavLink } from 'react-router-dom'
-import gr from '../images/gr.png'
+import gr from '../images/grwhite.png'
 
 export default function Navigation() {
   return (
