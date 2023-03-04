@@ -5,7 +5,6 @@
     padding: 0px 0px;
     grid-template-columns: 1fr 1fr;
     height: 80px;
-    border-bottom: 2px solid rgba(115, 85, 129, 0.164);
     box-sizing: border-box;
     box-shadow: 5px 10px 8px #0000002c;
     user-select: none;

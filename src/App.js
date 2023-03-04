@@ -25,10 +25,11 @@ function App() {
   const handleBar = (id) => {
     const currentRef = backgroundRef.current
     currentRef.dataset.active = id
-    console.log(currentRef.dataset.active)
-    console.log(backgroundRef)
+    
   }
-
+  const handleClick = (id) => {
+    
+  }
   return (
     <div id="background" className="App">
       <Navigation />

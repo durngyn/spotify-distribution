@@ -3,6 +3,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 8fr;
+    user-select: none;
 }
 
 .playlist-container {
@@ -39,10 +40,12 @@
     color: #9c5cff;
 }
 
-.graph-container {
+.content-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: grid;
     box-sizing: inherit;
     font-size: 1.5rem;
 }
@@ -86,14 +89,15 @@
     animation-name: animateBar;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    transition: opacity 0.15s cubic-bezier(.29,-0.12,.51,.91);
+    transition: opacity 0.15s cubic-bezier(.29, -0.12, .51, .91);
+    cursor: pointer;
 }
 
 .bars div:hover {
     opacity: 1;
 }
 
-.bars div:hover ~ #background-img {
+.bars div:hover~#background-img {
     background-size: 110vmax;
 }
 
