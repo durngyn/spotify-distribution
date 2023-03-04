@@ -8,27 +8,50 @@ import authHelpers from './helpers/authorizationHelpers'
 
 export default function Login() {
   const [url, setUrl] = useState("test")
-  const [authPair, setAuthPair] = useState({
+  const [authParams, setAuthParams] = useState({
     verifier: "",
-    challenge: ""
+    challenge: "",
+    state: ""
   })
 
   const handleLogin = () => {
     const verifier = authHelpers.generateCodeVerifier()
+    const route = 'user/authorize'
+
+    const login = () => {
+      const options = {
+        method: 'get',
+        url: process.env.REACT_APP_URI + route,
+        withCredentials: true,
+        params: {
+          code_challenge: authParams.challenge,
+          auth_state: authParams.state
+        }
+      }
+  
+      axios(options)
+        .then(data => console.log(data.data))
+    }
 
     authHelpers.createCodeChallenge(verifier)
       .then(challenge => {
-        setAuthPair({
+        setAuthParams({
           verifier: verifier,
-          challenge: challenge
+          challenge: challenge,
+          state: authHelpers.generateState()
         })
+        
+        login()
       })
 
+
+
+    console.log(process.env.REACT_APP_URI)
   }
 
   useEffect(() => {
-    console.log(authPair)
-  }, [authPair])
+    console.log(authParams)
+  }, [authParams])
 
   return (
     <div className={styles.container}>
