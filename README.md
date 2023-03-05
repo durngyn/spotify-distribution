@@ -1,4 +1,4 @@
-# Spotify Distribution Project (Start Date 01/21/2023)
+# Spotify Distribution Project
 
 ## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
 ### **Backend repo: https://github.com/bchh325/graphify-server**
