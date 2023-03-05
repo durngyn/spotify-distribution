@@ -27,7 +27,7 @@ export default function CallbackPage() {
 
             if (stateBefore === verification.stateAfter) {
                 const options = {
-                    url
+                
                 }
             } else {
                 console.log("State mismatch, aborting request")

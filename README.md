@@ -8,7 +8,7 @@ and interact with others who are also using the site at the same time.
 
 ## Technologies I'm planning to use
 * React
-* Express/Node (BFF Proxy / Auth Code Flow w/ PKCE)
+* Express/Node.js (BFF Proxy / Auth Code Flow w/ PKCE)
 * Spotify Web API
 * Spotify Web Playback SDK
 * WebSockets (Socket.io)
@@ -17,12 +17,11 @@ and interact with others who are also using the site at the same time.
 
 ## Completed Tasks
 * Sample UI Design
-* Authorization endpoint to redirect user to Spotify's authentication URL
-* State comparisons before/after redirect and obtained auth_code
-* Connected MongoDB for express-sessions and storage of session cookie on the client
+* Login component functionality and redirect to Spotify Authentication
+* OAuth state comparisons before and after requests in callback route
 
 ## Planned Tasks (I always find something to add to this list)
-* BFF Proxy for OAuth Flow as end goal as described here: (https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps#name-backend-for-frontend-bff-pr)
-* Create controller function for requesting access tokens with auth_code and code_verifier
-* Create controller function for requesting resources from Spotify's Web API
-* Create controller function to handle refreshing access tokens
+* Conditionally render components based on login status
+* Loading animations for code exchange and requesting resources
+* Request resources and render appropriate information
+* Create appropriate data visualzations from user's selected data
