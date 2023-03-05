@@ -36,8 +36,8 @@ export default function Login() {
 
       const options = {
         method: 'get',
-        url: process.env.REACT_APP_URI + route,
-        withCredentials: true,
+        url: process.env.REACT_APP_PROXY + route,
+        withCredentials: false,
         params: {
           code_challenge: authParams.challenge,
           auth_state: authParams.state

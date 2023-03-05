@@ -10,7 +10,7 @@ and interact with others who are also using the site at the same time.
 * React
 * Express/Node.js (BFF Proxy / Auth Code Flow w/ PKCE)
 * Spotify Web API
-* Spotify Web Playback SDK
+* Spotify Web Playback SDK (Premium Spotify accounts only)
 * WebSockets (Socket.io)
 * MongoDB
 * Deployment Options TBD
@@ -19,9 +19,13 @@ and interact with others who are also using the site at the same time.
 * Sample UI Design
 * Login component functionality and redirect to Spotify Authentication
 * OAuth state comparisons before and after requests in callback route
+* Exchanged auth_code and code_verifier for tokens stored in an httpOnly session cookie
 
 ## Planned Tasks (I always find something to add to this list)
 * Conditionally render components based on login status
 * Loading animations for code exchange and requesting resources
 * Request resources and render appropriate information
 * Create appropriate data visualzations from user's selected data
+* Figuring out when to issue new access tokens
+* Requests to proxy to revoke sessions (logout)
+* Create custom axios hook to handle HTTP requests

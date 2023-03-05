@@ -26,9 +26,21 @@ export default function CallbackPage() {
             window.sessionStorage.removeItem("state")
 
             if (stateBefore === verification.stateAfter) {
+                const route = 'user/exchange-code'
+
                 const options = {
-                
+                    method: 'post',
+                    url: process.env.REACT_APP_PROXY + route,
+                    withCredentials: true,
+                    data: {
+                        code: verification.code,
+                        code_verifier: code_verifier
+                    }
                 }
+
+                axios(options)
+                    .then(data => console.log({data: data}))
+                    .catch(err => console.log({err: err}))
             } else {
                 console.log("State mismatch, aborting request")
             }
