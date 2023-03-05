@@ -22,9 +22,6 @@ export default function Navigation() {
         <NavLink className={styles.button} to="spotify-distribution/privacy-policy">
           <span className={styles.button}>Privacy Policy</span>
         </NavLink>
-        <NavLink className={styles.button} to="spotify-distribution/callback">
-          <span className={styles.button}>Callback</span>
-        </NavLink>
         <NavLink className={styles.button} to="spotify-distribution/random-page-url">
           <span className={styles.button}>Not Found Page</span>
         </NavLink>

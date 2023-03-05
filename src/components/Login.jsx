@@ -16,9 +16,24 @@ export default function Login() {
 
   const handleLogin = () => {
     const verifier = authHelpers.generateCodeVerifier()
-    const route = 'user/authorize'
 
-    const login = () => {
+    authHelpers.createCodeChallenge(verifier)
+      .then(challenge => {
+        setAuthParams({
+          verifier: verifier,
+          challenge: challenge,
+          state: authHelpers.generateState()
+        })
+      })
+  }
+
+  useEffect(() => {
+    if (authParams.verifier !== '') {
+
+      window.sessionStorage.setItem("code_verifier", authParams.verifier)
+      window.sessionStorage.setItem("state", authParams.state)
+      const route = 'user/authorize'
+
       const options = {
         method: 'get',
         url: process.env.REACT_APP_URI + route,
@@ -28,29 +43,10 @@ export default function Login() {
           auth_state: authParams.state
         }
       }
-  
+
       axios(options)
-        .then(data => console.log(data.data))
+        .then(data => window.location.replace(data.data))
     }
-
-    authHelpers.createCodeChallenge(verifier)
-      .then(challenge => {
-        setAuthParams({
-          verifier: verifier,
-          challenge: challenge,
-          state: authHelpers.generateState()
-        })
-        
-        login()
-      })
-
-
-
-    console.log(process.env.REACT_APP_URI)
-  }
-
-  useEffect(() => {
-    console.log(authParams)
   }, [authParams])
 
   return (

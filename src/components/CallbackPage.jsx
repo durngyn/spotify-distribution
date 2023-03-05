@@ -1,42 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Cookies from 'universal-cookie'
-
-const cookies = new Cookies()
+import { useSearchParams } from 'react-router-dom'
 
 export default function CallbackPage() {
-    const [cookie, setCookie] = useState({
-        "verifier": "",
-        "challenge": ""
-    })
-    const handleClick = () => {
-        console.log("click")
-        const loginOptions = {
-            withCredentials: true,
-            method: 'get',
-            url: "http://localhost:8888/login",
-            params: {
-                test: "test"
-            },
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json"
+    const [params, setParams] = useSearchParams();
+    const [verification, setVerification] = useState(null)
+
+    useEffect(() => {
+        setVerification({
+            code: params.get("code"),
+            stateAfter: params.get("state")
+        })
+
+        params.delete("code")
+        params.delete("state")
+        setParams(params)
+    }, [])
+
+    useEffect(() => {
+        if (verification !== null) {
+            const code_verifier = window.sessionStorage.getItem("code_verifier")
+            const stateBefore = window.sessionStorage.getItem("state")
+
+            window.sessionStorage.removeItem("code_verifier")
+            window.sessionStorage.removeItem("state")
+
+            if (stateBefore === verification.stateAfter) {
+                const options = {
+                    url
+                }
+            } else {
+                console.log("State mismatch, aborting request")
             }
         }
-
-        axios(loginOptions)
-            .then(data => {
-                setCookie({
-                    
-                })
-                console.log(cookies.get('challenge'))
-                console.log(data.data)
-                window.location.replace(`${data.data}`);
-            })
-    }
+    }, [verification])
 
     return (
-        <div onClick={handleClick}>
+        <div>
             Callback
         </div>
     )
