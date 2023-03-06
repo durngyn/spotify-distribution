@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar }) {
     const [showSongs, setShowSongs] = useState(false)
     const [playlists, setPlaylists] = useState(null)
+    const [playlistItems, setPlaylistItems] = useState(null)
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
@@ -23,7 +24,19 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     }
 
     const getSongs = (id) => {
-        console.log({songId: id})
+        const route = 'data/playlist-items'
+
+        const options = {
+            method: 'get',
+            url: process.env.REACT_APP_PROXY + route,
+            withCredentials: true,
+            params: {
+                playlist_id: id
+            }
+        }
+
+        axios(options)
+            .then(data => console.log(data))
     }
 
     useEffect(() => {
