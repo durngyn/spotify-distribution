@@ -29,3 +29,4 @@ and interact with others who are also using the site at the same time.
 * Figuring out when to issue new access tokens
 * Requests to proxy to revoke sessions (logout)
 * Create custom axios hook to handle HTTP requests
+* Request songs based on playlist selection and create appropriate data visiualizations
