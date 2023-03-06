@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import CountUp from 'react-countup'; import styles from './GraphPage.module.css'
 import Songs from './Songs';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar }) {
-    const x = ["A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D"]
-
     const [showSongs, setShowSongs] = useState(false)
+    const [playlists, setPlaylists] = useState(null)
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
@@ -24,15 +24,28 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     useEffect(() => {
     }, [showSongs])
 
-    for (var i; i < 50; i++) {
-        x.push("")
-    }
+    useEffect(() => {
+        const route = 'data/playlists'
+
+        const options = {
+            method: 'get',
+            url: process.env.REACT_APP_PROXY + route,
+            withCredentials: true
+        }
+
+        axios(options)
+            .then(data => {
+                setPlaylists(data.data)
+            })
+            .catch(err => console.log(err))
+    }, [])
+
 
     return (
         <div className={styles["page-container"]}>
             <div className={styles["playlist-container"]}>
-                {x.map((item) => {
-                    return <span className={styles.playlist}>{item + " playlist item"}</span>
+                {playlists && playlists.map((item) => {
+                    return <span className={styles.playlist}>{item.name}</span>
                 })}
             </div>
             <div className={styles["content-container"]}>
