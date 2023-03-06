@@ -21,8 +21,10 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const handleCancel = () => {
         setShowSongs(false)
     }
-    useEffect(() => {
-    }, [showSongs])
+
+    const getSongs = (id) => {
+        console.log({songId: id})
+    }
 
     useEffect(() => {
         const route = 'data/playlists'
@@ -35,6 +37,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
 
         axios(options)
             .then(data => {
+                console.log(data.data)
                 setPlaylists(data.data)
             })
             .catch(err => console.log(err))
@@ -44,8 +47,8 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     return (
         <div className={styles["page-container"]}>
             <div className={styles["playlist-container"]}>
-                {playlists && playlists.map((item) => {
-                    return <span className={styles.playlist}>{item.name}</span>
+                {playlists && playlists.map((item, index) => {
+                    return <span onClick={() => getSongs(item.id)} className={styles.playlist}>{item.name}</span>
                 })}
             </div>
             <div className={styles["content-container"]}>
