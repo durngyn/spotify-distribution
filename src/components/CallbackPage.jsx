@@ -14,9 +14,9 @@ export default function CallbackPage() {
             stateAfter: params.get("state")
         })
 
-        params.delete("code")
-        params.delete("state")
-        setParams(params)
+        // params.delete("code")
+        // params.delete("state")
+        // setParams(params)
     }, [])
 
     useEffect(() => {
@@ -26,8 +26,8 @@ export default function CallbackPage() {
 
             window.sessionStorage.removeItem("code_verifier")
             window.sessionStorage.removeItem("state")
-
-            if (stateBefore === verification.stateAfter) {
+            console.log({ stateBefore: stateBefore, stateAfter: verification.stateAfter })
+            if (stateBefore == verification.stateAfter) {
                 const route = 'user/exchange-code'
 
                 const options = {
@@ -42,11 +42,9 @@ export default function CallbackPage() {
 
                 axios(options)
                     .then(data => {
-                        if (data.data == "success") {
-                            setIsDone(true)
-                        }
+                        set
                     })
-                    .catch(err => console.log({err: err}))
+                    .catch(err => console.log({ err: err }))
             } else {
                 console.log("State mismatch, aborting request")
             }
