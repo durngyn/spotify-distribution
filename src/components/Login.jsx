@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import useAxios from './hooks/useAxios';
 import styles from './Login.module.css'
 import { FaSpotify } from "react-icons/fa";
 import { CgArrowsExchange } from "react-icons/cg";
@@ -13,6 +14,7 @@ export default function Login() {
     challenge: "",
     state: ""
   })
+  const [data, requestData] = useAxios()
 
   const handleLogin = () => {
     const verifier = authHelpers.generateCodeVerifier()
@@ -32,22 +34,22 @@ export default function Login() {
 
       window.sessionStorage.setItem("code_verifier", authParams.verifier)
       window.sessionStorage.setItem("state", authParams.state)
-      const route = 'user/authorize'
 
       const options = {
-        method: 'get',
-        url: process.env.REACT_APP_PROXY + route,
-        withCredentials: false,
+        route: 'user/authorize',
         params: {
           code_challenge: authParams.challenge,
           auth_state: authParams.state
         }
       }
 
-      axios(options)
-        .then(data => window.location.replace(data.data))
+      requestData(options)
     }
-  }, [authParams])
+
+    if (data.data) {
+      window.location.replace(data.data)
+    }
+  }, [authParams, data.data])
 
   return (
     <div className={styles.container}>

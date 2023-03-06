@@ -13,7 +13,6 @@ function App() {
   const backgroundRef = useRef(null)
 
   const handleMouseEnter = (id) => {
-    console.log("mouseEnter")
     setHover("background-hover")
   }
 
@@ -30,6 +29,7 @@ function App() {
   const handleClick = (id) => {
     
   }
+  
   return (
     <div id="background" className="App">
       <Navigation />
