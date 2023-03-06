@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar }) {
     const x = ["A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D"]
+
     const [showSongs, setShowSongs] = useState(false)
     const graphRef = useRef(null)
     const songRef = useRef(null)
