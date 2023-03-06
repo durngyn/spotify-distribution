@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 export default function CallbackPage() {
     const [params, setParams] = useSearchParams();
     const [verification, setVerification] = useState(null)
+    const [isDone, setIsDone] = useState(false)
 
     useEffect(() => {
         setVerification({
@@ -39,7 +41,11 @@ export default function CallbackPage() {
                 }
 
                 axios(options)
-                    .then(data => console.log({data: data}))
+                    .then(data => {
+                        if (data.data == "success") {
+                            setIsDone(true)
+                        }
+                    })
                     .catch(err => console.log({err: err}))
             } else {
                 console.log("State mismatch, aborting request")
@@ -49,7 +55,7 @@ export default function CallbackPage() {
 
     return (
         <div>
-            Callback
+            {`Done: ${isDone}`}
         </div>
     )
 }
