@@ -25,7 +25,8 @@ const dataHelpers = {
     parseArtists: function (playlist_items) {
         console.log(playlist_items)
         const tracks = playlist_items
-        const artistIds = tracks.flatMap(item => {
+
+        let artistIds = tracks.flatMap(item => {
             if (item.track.artists.length > 1) {
                 let temp = []
                 for (let i = 0; i < item.track.artists.length; i++) {
@@ -35,13 +36,16 @@ const dataHelpers = {
             }
             return item.track.artists[0].id
         })
+        
+        artistIds = [...new Set(artistIds)];
+        console.log(artistIds)
 
         const artistBatches = []
 
         let batch = ""
         for (let i = 1; i <= artistIds.length; i++) {
             const currentArtist = artistIds[i - 1]
-            if (!batch.includes(currentArtist)){
+            if (!artistBatches.includes(currentArtist)){
                 batch += artistIds[i - 1]
                 batch += ","
             }
