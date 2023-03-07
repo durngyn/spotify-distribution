@@ -14,9 +14,9 @@ export default function CallbackPage() {
             stateAfter: params.get("state")
         })
 
-        // params.delete("code")
-        // params.delete("state")
-        // setParams(params)
+        params.delete("code")
+        params.delete("state")
+        setParams(params)
     }, [])
 
     useEffect(() => {
@@ -42,7 +42,9 @@ export default function CallbackPage() {
 
                 axios(options)
                     .then(data => {
-                        set
+                        if (data.data == "success") {
+                            setIsDone(true)
+                        }
                     })
                     .catch(err => console.log({ err: err }))
             } else {
