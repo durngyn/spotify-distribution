@@ -114,6 +114,33 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
         }
     }, [artistsData.data])
 
+
+    const sample = {
+        "genre1": 20,
+        "genre2": 15,
+        "genre3": 4,
+        "genre4": 10,
+        "genre5": 5,
+        "genre6": 9,
+        "genre7": 14,
+        "genre8": 12,
+        "genre9": 20,
+        "genre10": 5,
+        "genre11": 9,
+        "geAnre7": 14,
+        "geBnre8": 12,
+        "geCnre9": 20,
+        "genDre5": 5,
+        "genEre6": 9,
+        "geFnre7": 14,
+        "geGnre8": 12,
+        "geHnre9": 20
+    }
+
+    const names = Object.keys(sample)
+
+    console.log(names)
+
     return (
         <div className={styles["page-container"]}>
             <div className={styles["playlist-container"]}>
@@ -124,16 +151,19 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
             <div className={styles["content-container"]}>
                 <div className={styles.graph}>
                     <div className={styles.genres}>
-                        <span onClick={() => getGenres()}>Genre</span>
-                        {/* <span onClick={() => getImages()} >Genre</span> */}
-                        <span>Genre</span>
-                        <span>Genre</span>
+                        {sample && names.map((item, index) => {
+                            return <span>{item}</span>
+                        })}
                     </div>
                     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseExit} id="bar-graph" className={styles.bars}>
-                        <div onClick={() => handleClick(1)} onMouseEnter={() => handleBar(1)} className={styles.short}><CountUp duration={1} end={25} />%</div>
+                        {/* <div onClick={() => handleClick(1)} onMouseEnter={() => handleBar(1)} className={styles.short}><CountUp duration={1} end={25} />%</div>
                         <div onClick={() => handleClick(2)} onMouseEnter={() => handleBar(2)} className={styles.medium}><CountUp duration={1.5} end={50} />%</div>
                         <div onClick={() => handleClick(3)} onMouseEnter={() => handleBar(3)} className={styles.long}>Not currently using actual data</div>
-                        <div onClick={() => handleClick(4)} onMouseEnter={() => handleBar(4)} className={styles.short}><CountUp duration={1} end={25} />%</div>
+                        <div onClick={() => handleClick(4)} onMouseEnter={() => handleBar(4)} className={styles.short}><CountUp duration={1} end={25} />%</div> */}
+
+                        {sample && names.map((item, index) => {
+                            return <div onClick={() => handleClick(index)} onMouseEnter={() => handleBar(index)} style={{ "width": `calc(3vw * ${sample[`${item}`]})` }} className={styles.long}><CountUp duration={2} end={sample[`${item}`]} /></div>
+                        })}
                     </div>
                 </div>
                 {showSongs && <Songs handleRef={handleRef} handleCancel={handleCancel} className={styles["songs-container"]} />}

@@ -42,7 +42,7 @@
 
 .content-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: calc((100vh - 300px));
     justify-content: center;
     align-items: center;
     display: grid;
@@ -51,10 +51,14 @@
 }
 
 .graph {
-    width: 100%;
+    box-shadow: 5px 5px 8px 3px #0000002c;
+
+    width: 98%;
     margin: 0px 10px;
     display: grid;
-    grid-template-columns: min-content 8fr;
+    grid-template-columns: 1fr 8fr;
+    overflow: scroll;
+    height: 100%;
 }
 
 .graph span {
@@ -67,6 +71,7 @@
 
 .genres {
     padding: 0px 10px;
+    margin: 10px 0px;
     border-right: 3px solid whitesmoke;
     display: flex;
     flex-direction: column;
@@ -74,10 +79,11 @@
 }
 
 .bars {
+    overflow: hidden;
     padding: 0px 0px;
+    margin: 10px 0px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .bars div {
@@ -112,8 +118,7 @@
 }
 
 .long {
-    animation-duration: 2.5s;
-    width: 75%;
+    animation-duration: 1.5s;
 }
 
 @keyframes animateBar {

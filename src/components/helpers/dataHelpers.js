@@ -37,7 +37,6 @@ const dataHelpers = {
             return item.track.artists[0].id
         })
         
-        // artistIds = [...new Set(artistIds)];
         console.log(artistIds)
 
         const artistBatches = []
