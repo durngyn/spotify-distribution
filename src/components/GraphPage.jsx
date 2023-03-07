@@ -14,6 +14,15 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
+    const getImages = () => {
+        const getImages = playlists.map((currentPlaylist) => {
+            const plImage = currentPlaylist.images[0].url
+            return plImage
+        })
+        console.log(getImages)
+    }
+
+
     const parse_items = (playlist_items) => {
         console.log(playlist_items.items)
         const tracks = playlist_items.items
@@ -66,7 +75,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
         const options = {
             route: 'data/playlists'
         }
-        
+
         if (!playlistData.data) {
             requestPlaylistData(options)
         } else {
@@ -93,6 +102,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
                 <div className={styles.graph}>
                     <div className={styles.genres}>
                         <span onClick={parse_items}>Genre</span>
+                        <span onClick={() => getImages()} >Genre</span>
                         <span>Genre</span>
                         <span>Genre</span>
                         <span>Genre</span>
