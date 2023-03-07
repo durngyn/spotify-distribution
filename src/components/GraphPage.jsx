@@ -4,6 +4,7 @@ import Songs from './Songs';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import useAxios from './hooks/useAxios';
+import dataHelpers from './helpers/dataHelpers';
 
 export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar }) {
     const [showSongs, setShowSongs] = useState(false)
@@ -13,31 +14,6 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [songsData, requestSongsData] = useAxios()
     const graphRef = useRef(null)
     const songRef = useRef(null)
-
-    const parse_items = (playlist_items) => {
-        console.log(playlist_items)
-        const tracks = playlist_items
-        const songIds = tracks.map(item => item.track.id)
-
-        const songBatches = []
-
-        let batch = ""
-        for (let i = 1; i <= songIds.length; i++) {
-            batch += songIds[i - 1]
-            if (i % 50 == 0) {
-                songBatches.push(batch)
-                batch = ""
-                console.log("batch complete")
-            } else if (i == songIds.length) {
-                songBatches.push(batch.substring(0, batch.length - 1))
-            } else {
-                batch += ","
-            }
-        }
-
-        console.log(songBatches)
-        return songBatches
-    }
 
     const handleRef = (ref) => {
         console.log(ref)
@@ -77,7 +53,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     useEffect(() => {
         if (songsData.data) {
             console.log("success")
-            parse_items(songsData.data)
+            console.log(dataHelpers.parseItems(songsData.data))
         }
     }, [songsData.data])
 
@@ -92,7 +68,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
             <div className={styles["content-container"]}>
                 <div className={styles.graph}>
                     <div className={styles.genres}>
-                        <span onClick={parse_items}>Genre</span>
+                        <span>Genre</span>
                         <span>Genre</span>
                         <span>Genre</span>
                         <span>Genre</span>
