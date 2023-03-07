@@ -11,13 +11,47 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [playlists, setPlaylists] = useState(null)
     const [trackIds, setTrackIds] = useState(null)
     const [selectedPlaylist, setSelectedPlaylist] = useState(null)
+    const [genres, setGenres] = useState(null)
+    const [names, setNames] = useState(null)
+    const [max, setMax] = useState(null)
+
+
 
     const [playlistData, requestPlaylistData] = useAxios()
     const [songsData, requestSongsData] = useAxios()
     const [artistsData, requestArtistsData] = useAxios()
-
     const graphRef = useRef(null)
     const songRef = useRef(null)
+
+    const getImages = () => {
+        const getImages = playlists.map((currentPlaylist) => {
+            const plImage = currentPlaylist.images[0].url
+
+            return plImage
+        })
+        console.log(getImages)
+
+    }
+    const getGenres = () => {
+        const getGenres = artistsData.data.flatMap((currentArtists) => {
+            return currentArtists.genres.flatMap((currentGenres) => {
+                return currentGenres
+            })
+        })
+        console.log(getGenres)
+
+        let obj = {}
+
+        for (let i = 0; i < getGenres.length; i++) {
+            if (!obj[getGenres[i]]) {
+                obj[getGenres[i]] = 1
+            } else {
+                obj[getGenres[i]] += 1
+            }
+        }
+        return obj
+
+    }
 
     const handleRef = (ref) => {
         console.log(ref)
@@ -84,35 +118,25 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     useEffect(() => {
         if (artistsData.data) {
             console.log(artistsData.data)
+            setGenres(getGenres())
         }
     }, [artistsData.data])
 
+    useEffect(() => {
+        if (genres) {
+            console.log(genres)
+            setNames(Object.keys(genres))
+            let max = 0
+            const keys = Object.keys(genres)
 
-    const sample = {
-        "genre1": 20,
-        "genre2": 15,
-        "genre3": 4,
-        "genre4": 10,
-        "genre5": 5,
-        "genre6": 9,
-        "genre7": 14,
-        "genre8": 12,
-        "genre9": 20,
-        "genre10": 5,
-        "genre11": 9,
-        "geAnre7": 14,
-        "geBnre8": 12,
-        "geCnre9": 20,
-        "genDre5": 5,
-        "genEre6": 9,
-        "geFnre7": 14,
-        "geGnre8": 12,
-        "geHnre9": 20
-    }
-
-    const names = Object.keys(sample)
-
-    console.log(names)
+            for (let i = 0; i < keys.length; i++) {
+                if (genres[keys[i]] > max) {
+                    max = genres[keys[i]]
+                }
+            }
+            setMax(max)
+        }
+    }, [genres])
 
     return (
         <div className={styles["page-container"]}>
@@ -124,7 +148,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
             <div className={styles["content-container"]}>
                 <div className={styles.graph}>
                     <div className={styles.genres}>
-                        {sample && names.map((item, index) => {
+                        {names && names.map((item, index) => {
                             return <span>{item}</span>
                         })}
                     </div>
@@ -134,8 +158,8 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
                         <div onClick={() => handleClick(3)} onMouseEnter={() => handleBar(3)} className={styles.long}>Not currently using actual data</div>
                         <div onClick={() => handleClick(4)} onMouseEnter={() => handleBar(4)} className={styles.short}><CountUp duration={1} end={25} />%</div> */}
 
-                        {sample && names.map((item, index) => {
-                            return <div onClick={() => handleClick(index)} onMouseEnter={() => handleBar(index)} style={{"width": `calc(3vw * ${sample[`${item}`]})`}} className={styles.long}><CountUp duration={2} end={sample[`${item}`]} /></div>
+                        {names && names.map((item, index) => {
+                            return <div onClick={() => handleClick(index)} onMouseEnter={() => handleBar(index)} style={{ "width": `${((genres[`${item}`] / max) * 100) - 2}%` }} className={styles.long}><CountUp duration={2} end={genres[`${item}`]} /></div>
                         })}
                     </div>
                 </div>
