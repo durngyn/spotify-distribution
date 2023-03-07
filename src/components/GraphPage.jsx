@@ -15,16 +15,35 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [playlistData, requestPlaylistData] = useAxios()
     const [songsData, requestSongsData] = useAxios()
     const [artistsData, requestArtistsData] = useAxios()
-
+    const genres = []
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
     const getImages = () => {
         const getImages = playlists.map((currentPlaylist) => {
             const plImage = currentPlaylist.images[0].url
+
             return plImage
         })
         console.log(getImages)
+
+    }
+    const getGenres = () => {
+        const getGenres = artistsData.data.flatMap((currentArtists) => {
+            return currentArtists.genres.flatMap((currentGenres) => {
+                return currentGenres
+            })
+        })
+        function objGenres(arr) {
+            var obj = {};
+            for (var i = 0; i < arr.length; i++)
+                if (obj[i] == obj[i]) {
+                    obj.push({ freq: 1 });
+                }
+            obj[i] == arr[i];
+
+        }
+        console.log(getGenres)
     }
 
     const handleRef = (ref) => {
@@ -105,8 +124,8 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
             <div className={styles["content-container"]}>
                 <div className={styles.graph}>
                     <div className={styles.genres}>
-                        <span>Genre</span>
-                        <span onClick={() => getImages()} >Genre</span>
+                        <span onClick={() => getGenres()}>Genre</span>
+                        {/* <span onClick={() => getImages()} >Genre</span> */}
                         <span>Genre</span>
                         <span>Genre</span>
                     </div>
