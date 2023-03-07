@@ -6,6 +6,14 @@
 The end goal is for users to be able to view a data visualization of their genres in a given spotify playlist <br>
 and interact with others who are also using the site at the same time.
 
+
+### Server must be run locally until deployment. Sample .env files will be provided in the near future for you to run both the React app and the Node.js server with your own secrets for MongoDB and such.
+
+
+<img src="https://i.imgur.com/G6jHVqp.png" alt="Landing page" width="100%" title="Landing page">
+
+<img src="https://i.imgur.com/0QpPgtx.png" alt="Graph Page with sample data" width="100%" title="Graph page with sample data">
+
 ## Technologies I'm planning to use
 * React
 * Express/Node.js (BFF Proxy / Auth Code Flow w/ PKCE)
