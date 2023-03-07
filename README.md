@@ -12,7 +12,7 @@ and interact with others who are also using the site at the same time.
 
 <img src="https://i.imgur.com/G6jHVqp.png" alt="Landing page" width="100%" title="Landing page">
 
-<img src="https://i.imgur.com/0QpPgtx.png" alt="Graph Page with sample data" width="100%" title="Graph page with sample data">
+<img src="https://i.imgur.com/NsmhY5y.png" alt="Graph Page with actual data" width="100%" title="Graph page with actual data">
 
 ## Technologies I'm planning to use
 * React
