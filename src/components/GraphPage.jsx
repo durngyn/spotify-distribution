@@ -12,6 +12,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [trackIds, setTrackIds] = useState(null)
     const [playlistData, requestPlaylistData] = useAxios()
     const [songsData, requestSongsData] = useAxios()
+    const [selectedPlaylist, setSelectedPlaylist] = useState(null)
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
@@ -28,35 +29,46 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     }
 
     const getSongs = (id) => {
-        const options = {
-            route: 'data/playlist-items',
-            params: {
-                playlist_id: id
-            }
-        }
-
-        requestSongsData(options)
+        setSelectedPlaylist(id)
     }
+
+    useEffect(() => {
+        if (selectedPlaylist) {
+            const options = {
+                route: 'data/playlist-items',
+                params: {
+                    playlist_id: selectedPlaylist
+                }
+            }
+
+            requestSongsData(options)
+        }
+    }, [selectedPlaylist])
 
     useEffect(() => {
         const options = {
             route: 'data/playlists'
         }
-        
+
         if (!playlistData.data) {
             requestPlaylistData(options)
         } else {
             setPlaylists(playlistData.data)
         }
-    }, [playlistData.data])
+    }, [JSON.stringify(playlistData.data)])
 
     useEffect(() => {
         if (songsData.data) {
             console.log("success")
-            console.log(dataHelpers.parseItems(songsData.data))
+            setTrackIds(dataHelpers.parseItems(songsData.data))
         }
-    }, [songsData.data])
+    }, [JSON.stringify(songsData.data)])
 
+    useEffect(() => {
+        if (trackIds) {
+            console.log(trackIds)
+        }
+    }, [JSON.stringify(trackIds)])
 
     return (
         <div className={styles["page-container"]}>
