@@ -10,9 +10,12 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [showSongs, setShowSongs] = useState(false)
     const [playlists, setPlaylists] = useState(null)
     const [trackIds, setTrackIds] = useState(null)
+    const [selectedPlaylist, setSelectedPlaylist] = useState(null)
+
     const [playlistData, requestPlaylistData] = useAxios()
     const [songsData, requestSongsData] = useAxios()
-    const [selectedPlaylist, setSelectedPlaylist] = useState(null)
+    const [artistsData, requestArtistsData] = useAxios()
+
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
@@ -60,15 +63,29 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     useEffect(() => {
         if (songsData.data) {
             console.log("success")
-            setTrackIds(dataHelpers.parseItems(songsData.data))
+            setTrackIds(dataHelpers.parseArtists(songsData.data))
         }
     }, [JSON.stringify(songsData.data)])
 
     useEffect(() => {
         if (trackIds) {
+            const options = {
+                method: 'post',
+                route: 'data/multiple-artists',
+                data: {
+                    batches: trackIds
+                }
+            }
             console.log(trackIds)
+            requestArtistsData(options)
         }
     }, [JSON.stringify(trackIds)])
+
+    useEffect(() => {
+        if (artistsData.data) {
+            console.log(artistsData.data)
+        }
+    }, [artistsData.data])
 
     return (
         <div className={styles["page-container"]}>
