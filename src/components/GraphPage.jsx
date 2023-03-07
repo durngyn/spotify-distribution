@@ -15,8 +15,8 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const songRef = useRef(null)
 
     const parse_items = (playlist_items) => {
-        console.log(playlist_items.items)
-        const tracks = playlist_items.items
+        console.log(playlist_items)
+        const tracks = playlist_items
         const songIds = tracks.map(item => item.track.id)
 
         const songBatches = []
