@@ -10,8 +10,12 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     const [showSongs, setShowSongs] = useState(false)
     const [playlists, setPlaylists] = useState(null)
     const [trackIds, setTrackIds] = useState(null)
+    const [selectedPlaylist, setSelectedPlaylist] = useState(null)
+
     const [playlistData, requestPlaylistData] = useAxios()
     const [songsData, requestSongsData] = useAxios()
+    const [artistsData, requestArtistsData] = useAxios()
+
     const graphRef = useRef(null)
     const songRef = useRef(null)
 
@@ -36,15 +40,21 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
     }
 
     const getSongs = (id) => {
-        const options = {
-            route: 'data/playlist-items',
-            params: {
-                playlist_id: id
-            }
-        }
-
-        requestSongsData(options)
+        setSelectedPlaylist(id)
     }
+
+    useEffect(() => {
+        if (selectedPlaylist) {
+            const options = {
+                route: 'data/playlist-items',
+                params: {
+                    playlist_id: selectedPlaylist
+                }
+            }
+
+            requestSongsData(options)
+        }
+    }, [selectedPlaylist])
 
     useEffect(() => {
         const options = {
@@ -56,15 +66,34 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
         } else {
             setPlaylists(playlistData.data)
         }
-    }, [playlistData.data])
+    }, [JSON.stringify(playlistData.data)])
 
     useEffect(() => {
         if (songsData.data) {
             console.log("success")
-            console.log(dataHelpers.parseItems(songsData.data))
+            setTrackIds(dataHelpers.parseArtists(songsData.data))
         }
-    }, [songsData.data])
+    }, [JSON.stringify(songsData.data)])
 
+    useEffect(() => {
+        if (trackIds) {
+            const options = {
+                method: 'post',
+                route: 'data/multiple-artists',
+                data: {
+                    batches: trackIds
+                }
+            }
+            console.log(trackIds)
+            requestArtistsData(options)
+        }
+    }, [JSON.stringify(trackIds)])
+
+    useEffect(() => {
+        if (artistsData.data) {
+            console.log(artistsData.data)
+        }
+    }, [artistsData.data])
 
     return (
         <div className={styles["page-container"]}>

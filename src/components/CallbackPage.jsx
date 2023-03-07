@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 import useAxios from './hooks/useAxios';
 
 export default function CallbackPage() {
