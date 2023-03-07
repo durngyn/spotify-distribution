@@ -76,7 +76,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
             <div className={styles["content-container"]}>
                 <div className={styles.graph}>
                     <div className={styles.genres}>
-                        <span onClick={parse_items}>Genre</span>
+                        <span>Genre</span>
                         <span onClick={() => getImages()} >Genre</span>
                         <span>Genre</span>
                         <span>Genre</span>
