@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
 import { isDisabled } from '@testing-library/user-event/dist/utils';
+import useAxios from './hooks/useAxios';
 
 export default function CallbackPage() {
     const [params, setParams] = useSearchParams();
     const [verification, setVerification] = useState(null)
     const [isDone, setIsDone] = useState(false)
+    const [data, requestData] = useAxios()
 
     useEffect(() => {
         setVerification({
@@ -26,32 +28,29 @@ export default function CallbackPage() {
 
             window.sessionStorage.removeItem("code_verifier")
             window.sessionStorage.removeItem("state")
-            console.log({ stateBefore: stateBefore, stateAfter: verification.stateAfter })
-            if (stateBefore == verification.stateAfter) {
-                const route = 'user/exchange-code'
 
+            if (stateBefore === verification.stateAfter) {
                 const options = {
                     method: 'post',
-                    url: process.env.REACT_APP_PROXY + route,
-                    withCredentials: true,
+                    route: 'user/exchange-code',
                     data: {
                         code: verification.code,
                         code_verifier: code_verifier
                     }
                 }
 
-                axios(options)
-                    .then(data => {
-                        if (data.data == "success") {
-                            setIsDone(true)
-                        }
-                    })
-                    .catch(err => console.log({ err: err }))
+                requestData(options)
             } else {
                 console.log("State mismatch, aborting request")
             }
         }
     }, [verification])
+
+    useEffect(() => {
+        if (data.data === "success") {
+            setIsDone(true)
+        }
+    }, [data.data])
 
     return (
         <div>

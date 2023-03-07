@@ -21,6 +21,8 @@ and interact with others who are also using the site at the same time.
 * OAuth state comparisons before and after requests in callback route
 * Exchanged auth_code and code_verifier for tokens stored in an httpOnly session cookie
 * Retreived playlist data from proxy and rendered appropriate playlist names
+* Retreived list of tracks based on playlist selection 
+* Created custom axios hook to handle HTTP requests made to BFF proxy
 
 ## Planned Tasks (I always find something to add to this list)
 * Conditionally render components based on login status
@@ -28,5 +30,4 @@ and interact with others who are also using the site at the same time.
 * Create appropriate data visualzations from user's selected data
 * Figuring out when to issue new access tokens
 * Requests to proxy to revoke sessions (logout)
-* Create custom axios hook to handle HTTP requests
-* Request songs based on playlist selection and create appropriate data visiualizations
+* Create appropriate data visiualizations given songs
