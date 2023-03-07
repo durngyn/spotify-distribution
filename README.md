@@ -1,6 +1,8 @@
 # Spotify Distribution Project
 
 ## **View what the website currently looks like here! https://bchh325.github.io/spotify-distribution/**
+Note: The currently deployment of the React site is extremely outdated, and it will most likely stay that way until deployment of the Node server, as people would not be able to use the currently deployed website without it anyway.
+
 ### **Backend repo: https://github.com/bchh325/graphify-server**
 
 The end goal is for users to be able to view a data visualization of their genres in a given spotify playlist <br>
