@@ -31,6 +31,7 @@ and interact with others who are also using the site at the same time.
 * Retreived playlist data from proxy and rendered appropriate playlist names
 * Retreived list of tracks based on playlist selection 
 * Created custom axios hook to handle HTTP requests made to BFF proxy
+* Successfully created genre distribution graph given a user's playlist 🥳
 
 ## Planned Tasks (I always find something to add to this list)
 * Conditionally render components based on login status
@@ -38,4 +39,5 @@ and interact with others who are also using the site at the same time.
 * Create appropriate data visualzations from user's selected data
 * Figuring out when to issue new access tokens
 * Requests to proxy to revoke sessions (logout)
-* Create appropriate data visiualizations given songs
+* Refactoring where the useAxios hook was used
+* Styling bugs
