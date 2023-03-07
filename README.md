@@ -41,3 +41,4 @@ and interact with others who are also using the site at the same time.
 * Requests to proxy to revoke sessions (logout)
 * Refactoring where the useAxios hook was used
 * Styling bugs
+* Sorting algorithm to order genres
