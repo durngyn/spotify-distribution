@@ -159,7 +159,7 @@ export default function GraphPage({ handleMouseEnter, handleMouseExit, handleBar
                         <div onClick={() => handleClick(4)} onMouseEnter={() => handleBar(4)} className={styles.short}><CountUp duration={1} end={25} />%</div> */}
 
                         {names && names.map((item, index) => {
-                            return <div onClick={() => handleClick(index)} onMouseEnter={() => handleBar(index)} style={{ "width": `${((genres[`${item}`] / max) * 100) - 2}%` }} className={styles.long}><CountUp duration={2} end={genres[`${item}`]} /></div>
+                            return <div onClick={() => handleClick(index)} onMouseEnter={() => handleBar(index)} style={{ "width": `${(((genres[`${item}`]) / max) * 100) - 2}%` }} className={styles.long}><CountUp duration={2} end={genres[`${item}`]} /></div>
                         })}
                     </div>
                 </div>
